@@ -17,7 +17,7 @@ public class Line {
         Random random = new Random();
         boolean previousPoint = false; //이전에 가로선 있었는지
 
-        for (int i = 0; i < width - 1; i++) {
+        for (int i = 0; i < width - 2; i++) {
             boolean point = random.nextBoolean() && !previousPoint;
             linePoints.add(point);
             previousPoint = point;
