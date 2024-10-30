@@ -23,6 +23,10 @@ public class Ladder {
         return ladderLines;
     }
 
+    public int getWidth() {
+        return WIDTH;
+    }
+
     public List<Line> getLines() {
         return lines;
     }
