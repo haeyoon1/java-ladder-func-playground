@@ -1,30 +1,30 @@
 package domain;
 
-import view.InputView;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class Ladder {
     private final List<Line> lines;
 
-    private static final int WIDTH = InputView.getLadderWidth();
-    private static final int HEIGHT = InputView.getLadderHeight();
+    private final int width;
+    private final int height;
 
-    public Ladder() {
+    public Ladder(int width, int height) {
+        this.width = width;
+        this.height = height;
         this.lines = createLadder();
     }
 
     private List<Line> createLadder() {
         List<Line> ladderLines = new ArrayList<>();
-        for (int i = 0; i < HEIGHT; i++) {
-            ladderLines.add(new Line(WIDTH));
+        for (int i = 0; i < height; i++) {
+            ladderLines.add(new Line(width));
         }
         return ladderLines;
     }
 
     public int getWidth() {
-        return WIDTH;
+        return width;
     }
 
     public List<Line> getLines() {

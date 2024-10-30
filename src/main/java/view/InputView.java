@@ -1,6 +1,5 @@
 package view;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
@@ -8,21 +7,29 @@ import java.util.Scanner;
 public class InputView {
     public static final Scanner scanner = new Scanner(System.in);
 
-    public static List<String> playerName(){
+    public static List<String> playerNames() { // 참여자 이름 입력
         System.out.println("참여할 사람 이름을 입력하세요. (이름은 쉼표(,)로 구분하세요)");
 
         String nameList = scanner.nextLine();
-        List<String> players = Arrays.asList(nameList.split(","));
-
-        return players;
+        return Arrays.asList(nameList.trim().split(","));
     }
-    public static int getLadderWidth(){
-        System.out.println("사다리의 넓이는 몇 개인가요?");
-        return scanner.nextInt();
+
+    public static List<String> gameResult(){ // 실행 결과 입력
+        System.out.println("실행 결과를 입력하세요. (결과는 쉼표(,)로 구분하세요)");
+
+        String nameList = scanner.nextLine();
+        return Arrays.asList(nameList.trim().split(","));
     }
 
     public static int getLadderHeight(){
-        System.out.println("사다리의 높이는 몇 개인가요?");
-        return scanner.nextInt();
+        System.out.println("최대 사다리 높이는 몇 개인가요?");
+        String height = scanner.nextLine().trim();
+
+        return Integer.parseInt(height);
+    }
+
+    public static String whoseResult(){
+        System.out.println("결과를 보고 싶은 사람은?");
+        return scanner.nextLine();
     }
 }
