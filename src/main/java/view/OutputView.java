@@ -1,8 +1,8 @@
 package view;
 
-import domain.Ladder;
+import domain.ladder.Ladder;
 import domain.LadderResult;
-import domain.Line;
+import domain.ladder.Line;
 
 import java.util.List;
 
@@ -24,24 +24,27 @@ public class OutputView {
         StringBuilder result = new StringBuilder("|");
 
         for (boolean point : line.getPoints()) {
-            result.append(point ? "----|" : "    |");
+            if (point) {
+                result.append("----|");
+            } else {
+                result.append("    |");
+            }
         }
         System.out.println(result);
     }
 
-    public static void printResult(Ladder ladder,List<String> playerNames, List<String> resultNames, String who) {
+    public static void printResult(LadderResult ladderResult, List<String> playerNames, String who) {
 
-        LadderResult ladderResult = new LadderResult(ladder, resultNames);
         List<String> results = ladderResult.calculateResults();
 
-        if (who.equals("all")){
+        if (who.equals("all")) {
             for (int i = 0; i < playerNames.size(); i++) {
                 System.out.println(playerNames.get(i) + " :" + results.get(i));
             }
-        } else if (who.equals("exit")){ //반복문 탈출 조건
+        } else if (who.equals("exit")) { //반복문 탈출 조건
             System.out.println("결과 조회를 종료합니다.");
         } else { //이름 하나 입력할경우
-            if (playerNames.contains(who)){
+            if (playerNames.contains(who)) {
                 System.out.println(who + " : " + results.get(playerNames.indexOf(who)));
             } else {
                 System.out.println("해당 이름의 결과가 없습니다.");
