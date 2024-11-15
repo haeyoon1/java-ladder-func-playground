@@ -26,29 +26,28 @@ public class OutputView {
         for (boolean point : line.getPoints()) {
             if (point) {
                 result.append("----|");
-            } else {
-                result.append("    |");
+                continue;
             }
+            result.append("    |");
         }
         System.out.println(result);
     }
 
-    public static void printResult(LadderResult ladderResult, List<String> playerNames, String who) {
-
-        List<String> results = ladderResult.calculateResults();
-
-        if (who.equals("all")) {
-            for (int i = 0; i < playerNames.size(); i++) {
-                System.out.println(playerNames.get(i) + " :" + results.get(i));
-            }
-        } else if (who.equals("exit")) { //반복문 탈출 조건
-            System.out.println("결과 조회를 종료합니다.");
-        } else { //이름 하나 입력할경우
-            if (playerNames.contains(who)) {
-                System.out.println(who + " : " + results.get(playerNames.indexOf(who)));
-            } else {
-                System.out.println("해당 이름의 결과가 없습니다.");
-            }
+    public static void printAllResult(List<String> results, List<String> playerNames) {
+        for (int i = 0; i < playerNames.size(); i++) {
+            System.out.println(playerNames.get(i) + " :" + results.get(i));
         }
+    }
+
+    public static void printIndividualResult(List<String> results, List<String> playerNames, String who) {
+        if (playerNames.contains(who)) {
+            System.out.println(who + " : " + results.get(playerNames.indexOf(who)));
+        } else {
+            System.out.println("해당 이름의 결과가 없습니다.");
+        }
+    }
+
+    public static void printExitMessage() {
+        System.out.println("결과 조회를 종료합니다.");
     }
 }
