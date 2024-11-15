@@ -1,7 +1,6 @@
 package view;
 
 import domain.ladder.Ladder;
-import domain.LadderResult;
 import domain.ladder.Line;
 
 import java.util.List;
