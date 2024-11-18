@@ -12,19 +12,30 @@ import java.util.List;
 
 public class LadderController {
 
-    public void run(){
-        List<String> players = InputView.inputPlayerNames();
-        List<String> results = InputView.inputGamePrice();
+    private Ladder ladder;
+    private List<String> players;
+    private List<String> results;
+    private List<String> gameResult;
+
+    public void createLadder(){
+        players = InputView.inputPlayerNames();
+        results = InputView.inputGamePrice();
+
         LadderWidth width = new LadderWidth(players.size());
         LadderHeight height = new LadderHeight(InputView.inputLadderHeight());
 
-        Ladder ladder = new Ladder(width, height);
+        ladder = new Ladder(width, height);
+    }
+
+    public void playLadderGame(){
         LadderGame ladderGame = new LadderGame(ladder, results);
         LadderResult ladderResult = ladderGame.playGame();
-        List<String> gameResult = ladderResult.getResults();
+        gameResult = ladderResult.getResults();
 
         OutputView.printLadder(ladder, players, results);
+    }
 
+    public void checkLadderGameResult(){
         while (true){
             String who = InputView.inputWhoseResult();
 

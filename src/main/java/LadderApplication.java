@@ -5,6 +5,8 @@ public class LadderApplication {
     public static void main(String[] args){
 
         LadderController controller = new LadderController();
-        controller.run();
+        controller.createLadder();
+        controller.playLadderGame();
+        controller.checkLadderGameResult();
     }
 }
