@@ -23,14 +23,6 @@ public class Ladder {
         return ladderLines;
     }
 
-    public int getWidth() {
-        return width.getValue();
-    }
-
-    public List<Line> getLines() {
-        return Collections.unmodifiableList(lines);
-    }
-
     public List<String> calculateResults(List<String> gameResults) {
 
         List<String> results = new ArrayList<>();
@@ -54,4 +46,13 @@ public class Ladder {
         }
         return currentPoint;
     }
+
+    public int getWidth() {
+        return width.getValue();
+    }
+
+    public List<Line> getLines() {
+        return Collections.unmodifiableList(lines);
+    }
+
 }

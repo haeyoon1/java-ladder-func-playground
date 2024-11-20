@@ -42,7 +42,8 @@ public class LadderController {
             if (who.equals("exit")){
                 OutputView.printExitMessage();
                 break;
-            } else if (who.equals("all")){
+            }
+            if (who.equals("all")){
                 OutputView.printAllResult(gameResult, players);
                 continue;
             }

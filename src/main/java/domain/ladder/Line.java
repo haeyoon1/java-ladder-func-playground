@@ -28,10 +28,6 @@ public class Line {
         return linePoints;
     }
 
-    public List<Boolean> getPoints() {
-        return Collections.unmodifiableList(points);
-    }
-
     public boolean isAbleToMoveRight(int currentPoint) {
         return (currentPoint < points.size() - 1) && points.get(currentPoint);
     }
@@ -39,4 +35,9 @@ public class Line {
     public boolean isAbleToMoveLeft(int currentPoint) {
         return (currentPoint > 0) && points.get(currentPoint - 1);
     }
+
+    public List<Boolean> getPoints() {
+        return Collections.unmodifiableList(points);
+    }
+
 }
