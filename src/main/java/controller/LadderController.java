@@ -24,7 +24,7 @@ public class LadderController {
         LadderWidth width = new LadderWidth(players.size());
         LadderHeight height = new LadderHeight(InputView.inputLadderHeight());
 
-        ladder = new Ladder(width, height);
+        ladder = new Ladder(width, height, players, results);
     }
 
     public void playLadderGame(){

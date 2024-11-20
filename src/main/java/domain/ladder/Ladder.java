@@ -9,10 +9,17 @@ public class Ladder {
     private final LadderWidth width;
     private final LadderHeight height;
 
-    public Ladder(LadderWidth width, LadderHeight height) {
+    public Ladder(LadderWidth width, LadderHeight height, List<String> players, List<String> results) {
+        validateSizes(players, results);
         this.width = width;
         this.height = height;
         this.lines = createLadder();
+    }
+
+    private void validateSizes(List<String> players, List<String> results) {
+        if (players.size() != results.size()) {
+            throw new IllegalArgumentException("참여자와 결과의 개수가 일치하지 않습니다.");
+        }
     }
 
     private List<Line> createLadder() {
@@ -20,6 +27,8 @@ public class Ladder {
         for (int i = 0; i < height.getValue(); i++) {
             ladderLines.add(new Line(width.getValue()));
         }
+
+
         return ladderLines;
     }
 
