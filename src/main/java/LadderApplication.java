@@ -6,7 +6,5 @@ public class LadderApplication {
 
         LadderController controller = new LadderController();
         controller.createLadder();
-        controller.playLadderGame();
-        controller.checkLadderGameResult();
     }
 }
