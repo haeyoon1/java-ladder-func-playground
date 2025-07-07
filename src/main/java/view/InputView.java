@@ -21,14 +21,14 @@ public class InputView {
         return Arrays.asList(nameList.trim().split(","));
     }
 
-    public static int inputLadderHeight() {
+    public static int inputLadderHeight() { // 사다리 높이
         System.out.println("최대 사다리 높이는 몇 개인가요?");
         String height = scanner.nextLine().trim();
 
         return Integer.parseInt(height);
     }
 
-    public static String inputWhoseResult() {
+    public static String inputWhoseResult() { // 쉼표(,)로 구분된 숫자를 입력
         System.out.println("결과를 보고 싶은 사람은?");
         return scanner.nextLine();
     }
