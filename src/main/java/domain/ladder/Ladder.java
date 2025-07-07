@@ -27,8 +27,6 @@ public class Ladder {
         for (int i = 0; i < height.getValue(); i++) {
             ladderLines.add(new Line(width.getValue()));
         }
-
-
         return ladderLines;
     }
 
@@ -53,6 +51,7 @@ public class Ladder {
                 currentPoint--;
             }
         }
+        System.out.println("currentPoint : " + currentPoint);
         return currentPoint;
     }
 
