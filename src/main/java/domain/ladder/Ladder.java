@@ -38,6 +38,7 @@ public class Ladder {
             int endPoint = calculateEndPoint(i);
             results.add(gameResults.get(endPoint));
         }
+        System.out.println("results : " + results);
         return results;
     }
 
