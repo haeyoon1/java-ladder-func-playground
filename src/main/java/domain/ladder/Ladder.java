@@ -27,6 +27,7 @@ public class Ladder {
         for (int i = 0; i < height.getValue(); i++) {
             ladderLines.add(new Line(width.getValue()));
         }
+        System.out.println("ladderLines : " + ladderLines);
         return ladderLines;
     }
 
